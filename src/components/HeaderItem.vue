@@ -13,15 +13,18 @@ export default {
     data() { return {
         links: [
             {title:'Bosh sahifa',link:'/'},
-            {title:'Bo`limlar',link:'/depart'},
-            {title:'Yangiliklar',link:'/news'},
-            {title:'Loyihalar',link:'/projects'}
+            {title:'Bo`limlar',link:'/departs'},
+            {title:'Xodimlar',link:'/workers'},
         ]
     }},
 }
 </script>
 <style>
-.links { display: flex; justify-content: center; }
+.links {
+  padding:20px 10px; 
+  display: flex; 
+  justify-content: center; 
+}
 .links a { margin: 0px 10px; text-decoration: none; color: #000; }
 .links a.router-link-active { text-decoration: underline; }
 </style>

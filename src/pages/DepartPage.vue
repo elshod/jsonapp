@@ -22,6 +22,7 @@
                 <tr>
                     <th>№</th>
                     <th>Bo'lim nomi</th>
+                    <th>Xodimlar soni</th>
                     <th></th>
                 </tr>
             </thead>
@@ -30,7 +31,18 @@
                     <td>{{i+1}}</td>
                     <td>{{d.name}}</td>
                     <td>
-                        <button @click="remove(d.id)" class="btn btn-danger">X</button>
+                        {{getCountWorker(d.id)}} ta
+                    </td>
+                    <td>
+                        <div class="d-flex justify-content-end">
+                            <router-link 
+                            class="btn btn-success me-2"
+                            :to="`/depart/${d.id}`"
+                            >
+                                Batafsil
+                            </router-link>
+                            <button @click="remove(d.id)" class="btn btn-danger">X</button>
+                        </div>
                     </td>
                 </tr>
             </tbody>
@@ -48,10 +60,15 @@ export default {
     data(){ 
         return {
             departs:[],
-            depart:{}
+            depart:{},
+            workers:[]
         }
     },
     methods: {
+        getCountWorker(id){
+            let filteredWorkers = this.workers.filter(worker => worker.depart == id)
+            return filteredWorkers.length
+        },
         remove(id){
             if (confirm('Qaroringiz qat`iymi?')){
                 axios.delete(`http://localhost:3000/departs/${id}`)
@@ -77,6 +94,11 @@ export default {
         .then(allDepart => {
             if (allDepart.status == 200)
                 this.departs = allDepart.data
+        })
+        axios.get('http://localhost:3000/workers')
+        .then(res => {
+            if (res.status == 200)
+                this.workers = res.data
         })
     }
 }

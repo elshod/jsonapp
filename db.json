@@ -1,5 +1,59 @@
 {
-  "departs": [],
-  "workers": [],
+  "departs": [
+    {
+      "name": "Web dasturlash",
+      "id": 1
+    },
+    {
+      "name": "Mobil dasturlash",
+      "id": 2
+    },
+    {
+      "name": "Boshqaruv",
+      "id": 3
+    },
+    {
+      "name": "Marketing",
+      "id": 4
+    }
+  ],
+  "workers": [
+    {
+      "name": "Polvon Tohirov",
+      "bdate": "1997-11-08",
+      "depart": "1",
+      "id": 2
+    },
+    {
+      "name": "Kamoliddin Jurayev",
+      "bdate": "1995-04-07",
+      "depart": "2",
+      "id": 3
+    },
+    {
+      "name": "Yo'ldoshev Ortiq",
+      "bdate": "1990-12-11",
+      "depart": "1",
+      "id": 4
+    },
+    {
+      "name": "Mansurova Lola",
+      "bdate": "1998-11-18",
+      "depart": "4",
+      "id": 5
+    },
+    {
+      "name": "Sardorova Aziza",
+      "bdate": "2002-06-16",
+      "depart": "2",
+      "id": 6
+    },
+    {
+      "name": "Erjanov Farhod",
+      "bdate": "2001-11-12",
+      "depart": "4",
+      "id": 7
+    }
+  ],
   "todos": []
 }
